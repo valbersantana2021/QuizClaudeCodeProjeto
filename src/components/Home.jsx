@@ -1,10 +1,10 @@
+import logo from '../assets/logo.jpg'
+
 export default function Home({ onStart }) {
   return (
     <div className="min-h-screen bg-brand-bg flex flex-col items-center justify-center px-4">
       <div className="text-center max-w-lg">
-        <div className="inline-flex items-center gap-2 bg-brand-primary text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-          Claude Code
-        </div>
+        <img src={logo} alt="Quiz Claude Code" className="mx-auto mb-6 h-24 w-auto object-contain rounded-xl" />
         <h1 className="text-4xl sm:text-5xl font-bold text-brand-text mb-4 leading-tight">
           Quiz Verdadeiro<br />ou Falso
         </h1>
