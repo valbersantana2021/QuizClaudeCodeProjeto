@@ -25,9 +25,12 @@ const LEVELS = [
   },
 ]
 
+import Header from './Header.jsx'
+
 export default function LevelSelect({ onSelect }) {
   return (
     <div className="min-h-screen bg-brand-bg flex flex-col items-center justify-center px-4 py-12">
+      <Header />
       <h2 className="text-3xl font-bold text-brand-text mb-2 text-center">Escolha o Nível</h2>
       <p className="text-brand-secondary mb-10 text-center">15 perguntas · 15s por pergunta</p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-3xl">

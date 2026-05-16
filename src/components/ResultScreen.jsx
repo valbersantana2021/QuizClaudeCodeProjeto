@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Header from './Header.jsx'
 
 const NIVEL_LABELS = {
   iniciante: 'Iniciante',
@@ -39,6 +40,7 @@ export default function ResultScreen({ answers, nivelEntrada, totalTime, saving,
 
   return (
     <div className="min-h-screen bg-brand-bg flex flex-col items-center py-10 px-4">
+      <Header />
       <div className="w-full max-w-2xl">
         {/* Score */}
         <div className="bg-brand-card border border-brand-border rounded-2xl p-8 text-center mb-6">

@@ -3,6 +3,7 @@ import Timer from './Timer.jsx'
 import ProgressBar from './ProgressBar.jsx'
 import QuestionCard from './QuestionCard.jsx'
 import FeedbackOverlay from './FeedbackOverlay.jsx'
+import Header from './Header.jsx'
 
 const NIVEL_LABELS = {
   iniciante: 'Iniciante',
@@ -44,6 +45,7 @@ export default function QuizEngine({ nivelEntrada, questions, currentIndex, feed
 
   return (
     <div className="min-h-screen bg-brand-bg flex flex-col items-center py-8 px-4">
+      <Header />
       <div className="w-full max-w-2xl">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
