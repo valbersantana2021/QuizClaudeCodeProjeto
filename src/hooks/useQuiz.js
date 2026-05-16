@@ -97,6 +97,9 @@ export function useQuiz() {
     setSaved(false)
   }, [])
 
+  const goRanking = useCallback(() => setScreen('ranking'), [])
+  const goHowItWorks = useCallback(() => setScreen('howItWorks'), [])
+
   const totalTime = startTimeRef.current
     ? Math.round((Date.now() - startTimeRef.current) / 1000)
     : 0
@@ -119,5 +122,7 @@ export function useQuiz() {
     saveResult,
     restartQuiz,
     goHome,
+    goRanking,
+    goHowItWorks,
   }
 }

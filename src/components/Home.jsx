@@ -1,6 +1,6 @@
 import logo from '../assets/logo.jpg'
 
-export default function Home({ onStart }) {
+export default function Home({ onStart, onRanking, onHowItWorks }) {
   return (
     <div className="min-h-screen bg-brand-bg flex flex-col items-center justify-center px-4">
       <div className="text-center max-w-lg">
@@ -11,12 +11,29 @@ export default function Home({ onStart }) {
         <p className="text-brand-secondary text-lg mb-10">
           Teste seus conhecimentos sobre o Claude Code em três níveis de dificuldade.
         </p>
-        <button
-          onClick={onStart}
-          className="bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors min-h-[48px] w-full sm:w-auto"
-        >
-          Começar Quiz
-        </button>
+
+        <div className="flex flex-col gap-3">
+          <button
+            onClick={onStart}
+            className="bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors min-h-[48px] w-full"
+          >
+            Começar Quiz
+          </button>
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              onClick={onRanking}
+              className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white font-semibold py-3 rounded-xl transition-colors min-h-[48px]"
+            >
+              Ver Ranking
+            </button>
+            <button
+              onClick={onHowItWorks}
+              className="border-2 border-brand-border text-brand-secondary hover:border-brand-primary hover:text-brand-primary font-semibold py-3 rounded-xl transition-colors min-h-[48px]"
+            >
+              Como Funciona
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   )

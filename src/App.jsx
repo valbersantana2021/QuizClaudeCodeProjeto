@@ -3,6 +3,8 @@ import Home from './components/Home.jsx'
 import LevelSelect from './components/LevelSelect.jsx'
 import QuizEngine from './components/QuizEngine.jsx'
 import ResultScreen from './components/ResultScreen.jsx'
+import Ranking from './components/Ranking.jsx'
+import HowItWorks from './components/HowItWorks.jsx'
 
 export default function App() {
   const {
@@ -23,6 +25,8 @@ export default function App() {
     saveResult,
     restartQuiz,
     goHome,
+    goRanking,
+    goHowItWorks,
   } = useQuiz()
 
   if (loading) {
@@ -33,8 +37,10 @@ export default function App() {
     )
   }
 
-  if (screen === 'home') return <Home onStart={restartQuiz} />
+  if (screen === 'home') return <Home onStart={restartQuiz} onRanking={goRanking} onHowItWorks={goHowItWorks} />
   if (screen === 'levelSelect') return <LevelSelect onSelect={startQuiz} />
+  if (screen === 'ranking') return <Ranking onBack={goHome} />
+  if (screen === 'howItWorks') return <HowItWorks onBack={restartQuiz} />
   if (screen === 'quiz' && questions.length > 0) {
     return (
       <QuizEngine
@@ -64,5 +70,5 @@ export default function App() {
     )
   }
 
-  return <Home onStart={goHome} />
+  return <Home onStart={restartQuiz} onRanking={goRanking} onHowItWorks={goHowItWorks} />
 }
